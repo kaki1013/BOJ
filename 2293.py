@@ -1,5 +1,5 @@
 n, k = map(int, input().split())
-coins = sorted([int(input()) for _ in range(n)])
+coins = [int(input()) for _ in range(n)]
 
 # dp[i;k] := k원을 만드는 경우의 수(반복문 i번 -> coins 0번부터 i-1번까지 사용) / 0원: 1가지
 dp = [int(i % coins[0] == 0) for i in range(k+1)]   # 초기화
