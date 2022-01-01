@@ -1,18 +1,14 @@
 n, k = map(int, input().split())
 coins = sorted([int(input()) for _ in range(n)])
 
-dp = [0]*(k+1)  # dp[i;k] := k원을 만드는 경우의 수(반복문 i번 -> coins 0번부터 i-1번까지 사용) / 0원: 1가지
+# dp[i;k] := k원을 만드는 경우의 수(반복문 i번 -> coins 0번부터 i-1번까지 사용) / 0원: 1가지
+dp = [int(i % coins[0] == 0) for i in range(k+1)]   # 초기화
 
-for i in range(k+1):
-    first = coins[0]
-    if i % first == 0:
-        dp[i] = 1
-
-for i in range(1, n):
-    for j in range(1, k+1):
-        now = coins[i]
-        if j >= now:
-            dp[j] += dp[j-now]
+for i in range(1, n):           # 동전 하나씩 사용
+    for j in range(1, k+1):     # 금액 하나씩 갱신
+        now = coins[i]          # 현재 사용 중인 금액
+        if j >= now:            # 현재 동전이 사용할 수 있다면
+            dp[j] += dp[j-now]  # 현재 동전을 사용함
 print(dp[k])
 
 """
