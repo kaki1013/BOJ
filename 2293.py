@@ -1,3 +1,4 @@
+# a1x1 + a2x2 + ... + anxn = k 의 해의 수를 구하는 문제 유형
 n, k = map(int, input().split())
 coins = [int(input()) for _ in range(n)]
 
