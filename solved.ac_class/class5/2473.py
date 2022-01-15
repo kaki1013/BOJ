@@ -1,5 +1,6 @@
 # 2467 응용
 # 간략화 필요..
+# 반례 참고: https://www.acmicpc.net/board/view/59873, https://www.acmicpc.net/board/view/70893
 def update(now, v1, v2, v3):
     if abs(sol[v1] + sol[v2] + sol[v3]) < abs(sum(now)):
         now = (sol[v1], sol[v2], sol[v3])
