@@ -1,5 +1,6 @@
 # 2467 응용
-# 간략화 필요..
+# 기존: N^2logN (이중 반복문 + 이분 탐색)
+# 새로운 풀이: N^2 (정렬 + 투 포인터)
 # 반례 참고: https://www.acmicpc.net/board/view/59873, https://www.acmicpc.net/board/view/70893
 def update(now, v1, v2, v3):
     if abs(sol[v1] + sol[v2] + sol[v3]) < abs(sum(now)):
@@ -79,3 +80,29 @@ for i in range(N):
                     break
 
 print(*sorted(minimum))
+
+# 다른 풀이(정렬, 투 카운터): https://zu-techlog.tistory.com/25
+import sys
+
+n = int(input())
+array = list(map(int, input().split()))
+
+array.sort()
+minTake = sys.maxsize
+
+for i in range(n - 2):
+    start = i + 1
+    end = n - 1
+    while start < end:
+        take = array[i] + array[start] + array[end]
+        if abs(take) < minTake:
+            minTake = abs(take)
+            result = [array[i], array[start], array[end]]
+        if take < 0:
+            start += 1
+        elif take > 0:
+            end -= 1
+        else:
+            break
+
+print(result[0], result[1], result[2])
