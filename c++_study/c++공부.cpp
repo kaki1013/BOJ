@@ -1,4 +1,6 @@
 /*
+0. 학습하기 좋은 사이트 : http://www.tcpschool.com/cpp/cpp_intro_program
+
 1. #include <bits/stdc++.h>
 bits/stdc++.h 헤더는 모든 표준 라이브러리가 포함된 헤더
  
