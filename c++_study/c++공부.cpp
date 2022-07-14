@@ -62,6 +62,8 @@ ios_base::sync_with_stdio(false)는 C와 C++의 버퍼를 분리합니다. 이�
 cin, cout과 scanf, printf 차이점 (11659번 : 구간 합 구하기 4)
 참고: https://restudycafe.tistory.com/m/354
 
+tuple 로 구성된 vector 사용법 및 주의사항, 오류 
+https://stackoverflow.com/questions/40188779/vector-of-tuples-in-c
 
 */
 
