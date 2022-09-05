@@ -24,4 +24,4 @@ while True:
     n = int(input())
     if not n:
         break
-    print(coprime(n))
+    print(coprime(n) if n != 1 else 0)
